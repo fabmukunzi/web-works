@@ -9,7 +9,7 @@
     />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/auth.css" />
-    <title>JobLink | Login</title>
+    <title>JobLink | Register</title>
   </head>
   <body>
     <header>
@@ -29,23 +29,31 @@
       </div>
     </header>
     <main id="login-page">
-      <form method="post" action="./login.php">
-        <h3 style="text-align: center; margin-top: -50px">
-          Welcome back, <span style="color: #e89a3c">Login</span>
+      <form method="post" action="./register.php">
+        <h3 style="text-align: center;">
+          Welcome Onboard, <span style="color: #e89a3c">Register</span>
         </h3>
+        <label for="names">Full Name</label>
+        <input style="width: 100%" type="text" name="names" required />
         <label for="email">Email</label>
-        <input style="width: 100%" type="email" name="email" />
+        <input style="width: 100%" type="email" name="email" required />
         <label for="password">Password</label>
-        <input style="width: 100%" type="password" name="password" />
+        <input style="width: 100%" type="password" name="password" required />
+        <label for="role">I am a:</label>
+        <div style="display: flex">
+          <input type="radio" name="role" value="seeker" checked /> Job
+          Seeker
+          <input type="radio" name="role" value="employer" /> Employer
+        </div>
         <p id="not-member">
-          Not a member?
-          <a style="color: #2b2ecf" href="./register.html">Register</a>
+          Already a member?
+          <a style="color: #2b2ecf" href="./login.html">Login</a>
         </p>
         <button
           class="secondary-btn"
           style="width: 105%; height: 43px; margin-top: 10px"
         >
-          Login
+          Register
         </button>
       </form>
     </main>

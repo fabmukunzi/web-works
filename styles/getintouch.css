@@ -1,0 +1,29 @@
+/* main{
+    display: block;
+} */
+.contact-info {
+  width: 50%;
+  text-align: center;
+}
+.contact-msg {
+  border-left: solid rgb(177, 175, 175) 1px;
+  width: 50%;
+  /* background-color: green; */
+}
+/* .contact-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.contact-item {
+  display: flex;
+  text-align: left;
+  margin-left: 40px;
+  gap: 10px;
+  font-size: 15px;
+  margin-top: 25px;
+}
+/* .contact-item:first-child {
+  margin-bottom: 25px;
+  background: green;
+} */
