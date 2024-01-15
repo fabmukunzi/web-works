@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/getintouch.css" />
+    <title>JobLink | About</title>
+  </head>
+  <body>
+    <?php
+    include('./header.php');
+    ?>
+    <main>
+      <main>
+        <div class="content" style="justify-content: space-between">
+          <span
+            style="
+              margin-bottom: 2px;
+              color: #2b2ecf;
+              font-weight: bold;
+              font-size: xx-large;
+            "
+            >JobLink Connect.</span
+          >
+          <p style="width: 410px">
+            we are passionate about
+            <span style="color: #e89a3c">connecting talented individuals</span>
+            with exciting job opportunities. <b>Our platform</b> is more than just a
+            job search engine it's a dynamic community where
+            <span style="color: #e89a3c"
+              >employers and job seekers come together</span
+            >
+            to build meaningful connections.
+          </p>
+        </div>
+        <div class="home-flyer">
+          <img src="./pexels-fauxels-3184465.jpg" alt="About Flyer" />
+        </div>
+      </main>
+    </main>
+  </body>
+</html>

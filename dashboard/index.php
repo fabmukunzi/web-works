@@ -10,14 +10,19 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | users</title>
     <link rel="stylesheet" href="./styles.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="./index.php">Users</a></li>
-            <li><a href="./jobs.php">Jobs</a></li>
-        </ul>
-    </div>
+    <?php
+    include('./sidebar.php');
+    if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: jobs.php");
+    exit();
+}
+    ?>
     <div class="side-data">
         <table>
             <caption>Joblink Users</caption>
@@ -43,7 +48,8 @@ session_start();
                         echo '<td>' . $user['email'] . '</td>';
                         echo '<td>' . $user['role'] . '</td>';
                         echo '<td>' . formatDate($user['createdAt'] ). '</td>';
-                        echo '<td>' ."<button class='primary-btn' style='background:red;'>Delete</button>". '</td>';
+                        echo '<td>' ."<button class='primary-btn' style='background:red;'>
+                        <a href='./deleteUser.php?id=" . $user["id"] . "'>Delete</a></button>". '</td>';
                         echo '</tr>';
                     }
                     mysqli_free_result($result);

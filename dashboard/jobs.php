@@ -8,19 +8,29 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | users</title>
+    <title>Dashboard | jobs</title>
     <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
+    <style>
+        img {
+            width: 90px;
+            height: 40px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="./index.php">Users</a></li>
-            <li><a href="./jobs.php">Jobs</a></li>
-        </ul>
-    </div>
+    <?php
+    include('./sidebar.php');
+    ?>
     <div class="side-data">
         <table>
-            <caption>Joblink | Jobs</caption>
+            <caption>
+                Your Job Posts
+                <button class='secondary-btn' style="width: fit-content; border-radius: 10px; margin-left: 700px">
+                    <a href="createJob.php">Create Job</a>
+                </button>
+            </caption>
             <thead>
                 <tr>
                     <th>Job ID</th>
@@ -33,23 +43,36 @@ session_start();
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT * FROM jobs";
+                $userId = $_SESSION['user_id'];
+                $query = "SELECT * FROM jobs WHERE employer='$userId'";
                 $result = mysqli_query($conn, $query);
-                if ($result) {
-                    while ($user = mysqli_fetch_assoc($result)) {
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($job = mysqli_fetch_assoc($result)) {
                         echo '<tr>';
-                        echo '<td>' . $user['id'] . '</td>';
-                        echo '<td>' . $user['title'] . '</td>';
-                        echo '<td>' . $user['description'] . '</td>';
-                        echo '<td>' . $user['flyer'] . '</td>';
-                        echo '<td>' . formatDate($user['createdAt'] ). '</td>';
-                        echo '<td>' ."<button class='primary-btn' style='background:red;'>Edit</button> <button class='primary-btn' style='background:red;'>Delete</button>". '</td>';
+                        echo '<td>' . $job['id'] . '</td>';
+                        echo '<td>' . $job['title'] . '</td>';
+                        echo '<td class="no-overflow">' . $job['description'] . '</td>';
+                        echo '<td>' . "<img src='" . $job['flyer'] . "' alt='not available' />" . '</td>';
+                        echo '<td>' . formatDate($job['createdAt']) . '</td>';
+                        echo '<td style="display:flex;gap:5px;">' . "
+                            <button class='primary-btn' style='background:#2b2ecf'>
+                                <a target='_blank' href='../job.php?id=" . $job["id"] . "'>View</a>
+                            </button>
+                            <button class='primary-btn'>
+                                <a href='./editJob.php?id=" . $job["id"] . "'>Edit</a>
+                            </button> 
+                            <button class='primary-btn' style='background:red;'>
+                                <a style='color:white;text-decoration:none;' href='./deleteJob.php?id=" . $job["id"] . "'>Delete</a>
+                            </button>
+                        " . '</td>';
                         echo '</tr>';
                     }
                     mysqli_free_result($result);
                 } else {
-                    echo "Error: " . mysqli_error($conn);
+                    echo '<tr><td colspan="6">No jobs created yet</td></tr>';
                 }
+
                 mysqli_close($conn);
                 ?>
             </tbody>
