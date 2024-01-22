@@ -18,12 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: ./index.php');
             exit();
             } else {
-                echo "<script>alert('Incorrect password');</script>";
-                header("Location:login.html");
+                echo "<script>alert('Incorrect password'); location.href='login.html';</script>";
             }
         } else {
-            echo "<script>alert('User not registered, create an account');'</script>";
-            header("Location:register.html");
+            echo "<script>alert('User not registered, create an account');location.href='register.html';</script>";
         }
         mysqli_free_result($userResult);
     } else {

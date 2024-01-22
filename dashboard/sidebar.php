@@ -3,9 +3,11 @@
   <?php
    if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
     echo '<button class="secondary-btn">
-  <a href="./index.php">Users</a>
-</button>';}
-if (!isset($_SESSION['role']) || isset($_SESSION['role']) && $_SESSION['role'] == 'seeker')
+  <a href="./index.php">Users</a></button>';
+  echo '<button class="secondary-btn">
+  <a href="./messages.php">Messages</a></button>';
+}
+if (isset($_SESSION['role']) && $_SESSION['role'] == 'seeker')
   header('Location: ../index.php');
   ?>
   <button class="secondary-btn">

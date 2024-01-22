@@ -14,8 +14,9 @@
     <?php
     include('./header.php');
     ?>
-    <main class="job-details">
+    <main class="job-details" style="margin-bottom:40px">
         <?php
+        // include('./formatDate.php');
         if (isset($_GET['id'])) {
             $jobId = $_GET['id'];
             include('./connect.php');
@@ -34,12 +35,16 @@
                 echo '<th>Salary</th>';
                 echo '</tr>';
                 echo '<tr>';
-                echo '<td>' . $row["xperience"] . '</td>';
+                echo '<td>'.'Min ' . $row["xperience"] .' year'. '</td>';
                 echo '<td>' . $row["type"] . '</td>';
                 echo '<td>' . $row["salary"] . ' RWF'.'</td>';
                 echo '</tr>';
                 echo '</table>';
+                echo '<h3>Overview</h3>';
                 echo '<p>' . $row["description"] . '</p>';
+                echo '<h3>Application Deadline</h3>';
+                echo '<p>' . $row["deadline"]. '</p>';
+                echo '<button class="secondary-btn" style="width:300px;height:40px">Apply Now</button>';
                 echo '</div>';
             } else {
                 echo "Job not found.";

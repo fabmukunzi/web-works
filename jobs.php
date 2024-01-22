@@ -29,7 +29,7 @@
                 echo '<div class="job-card-subtitle">' . $row["description"] . '</div>';
                 echo '<div class="job-detail-buttons">';
                 echo '<button class="primary-btn detail-button">' . $row["type"] . '</button>';
-                echo '<button class="primary-btn detail-button">' . $row["xperience"] . '</button>';
+                echo '<button class="primary-btn detail-button">' .'Min ' . $row["xperience"] .' year'. '</button>';
                 echo '<button class="primary-btn detail-button">'.'RWF ' . $row["salary"] . '</button>';
                 echo '</div>';
                 echo '<div class="job-card-buttons">';

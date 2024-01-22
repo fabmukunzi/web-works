@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,10 +36,10 @@
         </select>
         <select name="xperience">
           <option>select minimum experience</option>
-          <option value="Full Time">1 year</option>
-          <option value="Part Time">3years</option>
-          <option value="Internrship">5 years</option>
-          <option value="Internrship">10 years</option>
+          <option value="1">1 year</option>
+          <option value="3">3years</option>
+          <option value="5">5 years</option>
+          <option value="10">10 years</option>
         </select>
         <input
           type="datetime-local"

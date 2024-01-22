@@ -43,7 +43,7 @@
             <span style="font-weight: bold">Chat with us</span><br />
             Our team is here to help you!<br />
             <span style="font-weight: bold; color: #2b2ecf"
-              >rolineservices3@gmail.com</span
+              >mukunzifabrice77@gmail.com</span
             >
           </div>
         </div>
@@ -97,6 +97,8 @@
             align-items: center;
             text-align: left;
           "
+          method="post"
+          action="handleContact.php"
         >
           <input
             style="width: 80%"

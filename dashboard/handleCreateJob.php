@@ -3,7 +3,7 @@ include('../connect.php');
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $employer = 1;
+    $employer =$_SESSION['user_id'] ;
     $title = $_POST["title"];
     $salary = $_POST["salary"];
     $description = $_POST["description"];
