@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2024 at 01:25 AM
+-- Generation Time: Jan 22, 2024 at 01:35 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -117,7 +117,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `names`, `password`, `avatar`, `createdAt`, `role`) VALUES
-(1, 'mukunzifabrice77@gmail.com', 'Fabrice Mukunzi', '$2y$10$4emduhCD5IjbvX8nMmHjhea7s1K6iPYvjR4A4XI9WkGHFHHM01LmO', './dashboard/uploads/83646585.jpg', '0000-00-00', 'admin'),
+(1, 'mukunzifabrice77@gmail.com', 'Fabrice Mukunzi', '$2y$10$rn9no2XcQuBkEeGe9W9lU.3O12O.LlI2ElGXZhDt6GPss7U13aFtO', './dashboard/uploads/83646585.jpg', '0000-00-00', 'admin'),
 (2, 'fabmukunzi@gmail.com', 'Munyana Angel', '$2y$10$HrRvGa0VnicuNahkNtF96ezCcBUWoWEg5s8KU.E3wVus.Ourif23W', '', '2024-01-11 21:40:12', 'employer'),
 (3, 'jmugisha@gmail.com', 'Mugisha joseph', '$2y$10$xg8.la6.ZfUDJy7Qk9HpKeYmGhR22e9DnIGMcSLhY7VEDh0s2Cdqy', '', '2024-01-11 21:42:47', 'seeker'),
 (5, 'mukunzifabrice@gmail.com', 'mukunzi fabrice', '$2y$10$UezWjKp2TPq5VtbSU9XhvesgVbwHwuKzzjHTd0A9sFqsqEfpZ8KxC', '', '2024-01-11 21:43:42', 'seeker'),
